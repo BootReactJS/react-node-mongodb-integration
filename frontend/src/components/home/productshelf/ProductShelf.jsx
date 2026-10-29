@@ -12,7 +12,7 @@ export function ProductShelf() {
 
     return(
         <div className="ProductShelf">
-            <h3>Productrow</h3>
+            <h3>Shelf</h3>
             <h4>{data}</h4>
             <section className="Productrow">
                 <Product parameter={"./headsets.jpg"} />

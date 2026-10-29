@@ -8,7 +8,7 @@ function insertData( newuser ){
 
 
 function checkUser( userEmail  ){
-    console.log(userEmail)
+   // console.log(userEmail)
     var b =  userSchemaClass.findOne( { email: userEmail } )
     return userSchemaClass.findOne( { email: userEmail } )
  }

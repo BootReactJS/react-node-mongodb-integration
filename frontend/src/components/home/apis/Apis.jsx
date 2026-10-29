@@ -9,10 +9,10 @@ export function Apis(){
     var [dataarray, setDataarray] =  useState(null);
 
     useEffect(
-        () => {invokeAPI(setDataarray);},
+        () => {invokeAPI(setDataarray, "all");},
         []
     )
-    return(
+   /*  return(
         <section>
         <Types  setProducts={setDataarray} />
      
@@ -24,14 +24,21 @@ export function Apis(){
                 }) 
                 
             }
-
-            
+      
         </section>
-
-
        </section>
-
         
-    );
+    ); */
+    return (
+  <div>
+    {dataarray?.map((item, index) => (
+      <div key={item._id || index}>
+        {item.name || item.title }
+
+      </div>
+    ))}
+  </div>
+);
+
 }
 export default Apis;

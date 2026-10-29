@@ -18,7 +18,7 @@ function signupController(request, response){
 function signinController(request, response){
     const data = request.body;
     const requestEmail = data.email;
-   console.log(data.password)
+  // console.log(data.password)
     checkUser( requestEmail )
     .then( ( user )=>{
         
@@ -48,8 +48,8 @@ function signinController(request, response){
     })
     .catch( (error)=>{
       //  console.log(error)
-        console.log("user is ==== invalid")
-        response.status(401).send( {ok:false, statusCode: 401, message: "user is ==== invalid"} )
+        console.log("user is invalid")
+        response.status(401).send( {ok:false, statusCode: 401, message: "user is  invalid"} )
     })
     }
 
@@ -81,8 +81,8 @@ function signinController(request, response){
         })
         .catch( (error)=>{
       console.log(error)
-        console.log("loginController : user is ==== invalid")
-        response.status(401).send( {ok:false, statusCode: 401, message: "user is ==== invalid"} )
+        console.log("loginController : user is  invalid")
+        response.status(401).send( {ok:false, statusCode: 401, message: "user is  invalid"} )
     })
 }
 

@@ -4,13 +4,13 @@ import { toast } from "react-toastify"
 const url = "http://localhost:4936/api/auth/sign-up";
 
 export const getUserData = (firstName, lastName, email, password, confirmPassword) => {
-    console.log(
+   /*  console.log(
         firstName.current.value,
         lastName.current.value,
         email.current.value,
         password.current.value,
         confirmPassword.current.value    
-    )
+    ) */
     
     const newuser = {
     "firstName": firstName.current.value,
@@ -24,11 +24,9 @@ export const getUserData = (firstName, lastName, email, password, confirmPasswor
 
   axios.post(url, newuser)
     .then( (response)=> {
-        console.log(response);
         toast.success("Account is created")
     })
     .catch( (error)=>{
-        console.log(error);
         toast.error("Failed to create the account")
 
     });

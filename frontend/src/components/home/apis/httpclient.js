@@ -12,12 +12,14 @@ export function invokeAPI(setDataarray, categoryName = "all"){
     })
     
         .then(   ( resolvedata) =>{
-            console.log( "resolvedata result" + resolvedata)
-
-            setDataarray(resolvedata.data.result)
+          /*   console.log("response:", resolvedata);
+            console.log("data:", resolvedata.data);
+            console.log("result:", resolvedata.data.result);
+            console.log(Array.isArray(resolvedata.data.result)); */
+            setDataarray(resolvedata.data.result);
         })
         .catch( (rejectdata)  =>{
-           toast.error("rejectdata " + rejectdata.response)
+            toast.error("Error: " + (rejectdata.response?.data || rejectdata.message));
         })
 }
 

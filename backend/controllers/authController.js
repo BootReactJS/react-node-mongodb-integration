@@ -61,7 +61,7 @@ function signinController(request, response) {
             });
         })
         .catch((error) => {
-            console.log(error);
+           // console.log(error);
             return response.status(401).send({
                 ok: false,
                 statusCode: 401,

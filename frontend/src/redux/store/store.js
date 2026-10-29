@@ -5,7 +5,7 @@ const componentStore = legacy_createStore(nameReducerFunction);
 
 componentStore.subscribe(
     () =>{
-        console.log(componentStore.getState() );
+       // console.log(componentStore.getState() );
     }
 )
 export default componentStore;

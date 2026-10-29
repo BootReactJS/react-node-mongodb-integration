@@ -45,7 +45,8 @@ const Signin = () => {
           try {
             window.localStorage.setItem("token", token);
           } catch (err) {
-            console.error("Local storage is not available:", err);
+           // console.error("Local storage is not available:", err);
+            toast.error("Local storage is not available:", err)
           }
         }
 
