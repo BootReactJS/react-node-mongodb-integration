@@ -1,0 +1,9 @@
+.types{
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 50px auto;
+    column-gap: 40px;
+}

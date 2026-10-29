@@ -1,0 +1,7 @@
+.eachType img{
+    border-radius: 50%;
+    box-shadow: 0 0 10px darkcyan;
+}
+.eachType h2{
+    color: royalblue
+}

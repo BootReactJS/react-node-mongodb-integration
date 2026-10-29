@@ -1,0 +1,146 @@
+.modern-header {
+  background: rgba(255, 255, 255, 0.9);
+  /* backdrop-filter: blur(10px); */
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 1.35rem;
+}
+
+.brand-icon {
+  width: 54px;
+  height: 38px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+  color: #fff;
+  box-shadow: 0 12px 22px rgba(79, 70, 229, 0.3);
+}
+
+.brand-name {
+  letter-spacing: 0.3px;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-menu a {
+  position: relative;
+  text-decoration: none;
+  color: #475569;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.header-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+  transition: width 0.2s ease;
+}
+
+.header-menu a:hover {
+  color: #0f172a;
+}
+
+.header-menu a:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 11px 18px;
+  font-weight: 700;
+  font-size: 0.96rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-btn:hover {
+  transform: translateY(-1px);
+}
+
+.login-btn {
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.signup-btn {
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+  color: white;
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.24);
+}
+
+@media (max-width: 900px) {
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .header-container {
+    padding: 16px 18px;
+  }
+
+  .header-menu {
+    gap: 14px 20px;
+    font-size: 0.9rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+#logout {
+  background-color: red;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
