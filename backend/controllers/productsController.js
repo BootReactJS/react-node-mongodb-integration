@@ -8,7 +8,7 @@ function getAllProducts(request, response){
                         response.send( {ok: true,  result: data} );
                 }).catch( (error) => {
                         response.send( {ok: false, message: "failed to fetch the data"} );
-                      //  console.log(error)
+                        console.log(" ..........getProducts..........." +error)
                 });
 }
 

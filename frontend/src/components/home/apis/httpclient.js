@@ -2,27 +2,41 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 
-export function invokeAPI(setDataarray, categoryName = "all"){
-    //axios.get("https://dummyjson.com/products")
+export function invokeAPI(setDataArray, categoryName = "all"){
     axios.get("http://localhost:4936/api/products/allproducts",
         {
-                params: {
-                category: categoryName.toLowerCase(),
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            params: {
+                category: categoryName.toLowerCase()
             }
-    })
-    
-        .then(   ( resolvedata) =>{
-          /*   console.log("response:", resolvedata);
-            console.log("data:", resolvedata.data);
-            console.log("result:", resolvedata.data.result);
-            console.log(Array.isArray(resolvedata.data.result)); */
-            setDataarray(resolvedata.data.result);
         })
+       .then(   
+            ( resolvedata) =>{
+               // console.log("response:", resolvedata);
+
+                if( resolvedata.data.ok ){
+                    //console.log("data:", resolvedata.data);
+                    //console.log("result:", resolvedata.data.result);
+                    //console.log(Array.isArray(resolvedata.data.result)); 
+                    //setDataArray(resolvedata.data.result);
+                    setDataArray([...resolvedata.data.result]);
+
+                }else{
+                    throw Error(resolvedata.data.message);
+                }
+            }
+       )
         .catch( (rejectdata)  =>{
-            toast.error("Error: " + (rejectdata.response?.data || rejectdata.message));
+           // toast.error("Error: " + (rejectdata.response?.data || rejectdata.message));
+           //console.log("error...................", rejectdata.message);
+           //console.log("error rejectdata...................", rejectdata);
+
+            toast.error(rejectdata.message);
         })
 }
 
-export function getCategoriesData(setDataarray, categoryName) {
-  invokeAPI(setDataarray, categoryName);
+export function getCategoriesData(setDataArray, categoryName) {
+  invokeAPI(setDataArray, categoryName);
 }

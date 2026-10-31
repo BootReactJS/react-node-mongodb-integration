@@ -5,7 +5,7 @@ import { useState }  from "react"
 import { createContext } from "react";
 
 export function A(){
-   var [ change, setChange]  =  useState("buffer")
+   var [ change, setChange]  =  useState("OneComponentToOtherComponentSharing")
     
     return (
         <section>

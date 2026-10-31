@@ -20,24 +20,32 @@ const Signin = () => {
 
   const handleForm = (event) => {
     const { name, value } = event.target;
-    setState((prevState) => ({
+
+   setState((prevState) => ({
       ...prevState,
       [name]: value,
-    }));
+    })); 
+
   };
 
   const SigninBasic = async (event) => {
     event.preventDefault();
 
     try {
+
+   /*   const  state= {
+          email: "upsign@gmail.com",
+          password: "upsign123"
+      } */
+           
       const response = await axios.post(url, state);
-      //console.log(response);
+
 
       toast.success("Successfully logged in");
       setLoggedIn(true);
 
-     /*  console.log(response.data.token);
-      localStorage.setItem("token", response.data.token); */
+     console.log(response.data.token);
+      localStorage.setItem("token", response.data.token); 
 
        const token = response?.data?.token;
 
@@ -49,16 +57,20 @@ const Signin = () => {
             toast.error("Local storage is not available:", err)
           }
         }
+      console.log(response.data.token);
+      localStorage.setItem("token", response.data.token); 
+      login(); // only if AuthContext provides a function
 
-      if (typeof login === "function") {
+      /* if (typeof login === "function") {
         login(); // only if AuthContext provides a function
-      }
+      }*/
     } catch (error) {
       toast.error(error.response?.data?.message || error.message);
-    }
+    } 
   };
 
   // Render Wrapper only after successful login
+  console.log("loggedIn ------------------", loggedIn)
   if (loggedIn) {
     return <Wrapper isLoggedIn={true} />;
   }
